@@ -1,5 +1,20 @@
 # react-select
 
+## 5.0.0-beta.1
+
+### Patch Changes
+
+- [7fcec537](https://github.com/JedWatson/react-select/commit/7fcec537e75b80b3084b64db76150cfef9d2ee2f) [#4697](https://github.com/JedWatson/react-select/pull/4697) - Add the role of combobox and the required ARIA attributes to the Input and DummyInput components to allow JAWS support and a better screen reader experience overall.
+
+- [9e82aadc](https://github.com/JedWatson/react-select/commit/9e82aadcd1931f730235d317a2299a681da8c373) [#4676](https://github.com/JedWatson/react-select/pull/4676) - The following improvements have been made for screen reader users:
+
+  - NVDA now announces the context text when initially focused
+  - Selected option/s (single and multi) are now announced when initially focused
+  - VoiceOver now announces the context text when re-focusing
+  - The clear action is now announced
+  - Placeholder text is now announced
+  - Mobile VoiceOver is now able to remove selected multi options
+
 ## 5.0.0-beta.0
 
 ### Major Changes
