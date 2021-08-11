@@ -1,10 +1,13 @@
 {
-  "name": "@react-select/monorepo",
+  "name": "react-select",
   "private": true,
   "version": "1.0.0",
   "description": "A Select control built with and for ReactJS",
   "author": "Jed Watson",
   "license": "MIT",
+  "main": "lib/react-select.cjs.js",
+  "module": "lib/react-select.esm.js",
+  "types": "lib/react-select.cjs.d.ts",
   "repository": {
     "type": "git",
     "url": "https://github.com/JedWatson/react-select.git"
@@ -113,7 +116,6 @@
   "scripts": {
     "build": "preconstruct build",
     "watch": "preconstruct watch",
-    "postinstall": "preconstruct build",
     "coveralls": "cat coverage/lcov.info | coveralls",
     "prettify": "prettier --write .",
     "prettier:check": "prettier --check .",
@@ -167,12 +169,7 @@
   ],
   "preconstruct": {
     "packages": [
-      "packages/*",
-      "docs/generate-magical-types"
+      "packages/*"
     ]
-  },
-  "browser": {
-    "./dist/react-select.cjs.js": "./dist/react-select.browser.cjs.js",
-    "./dist/react-select.esm.js": "./dist/react-select.browser.esm.js"
   }
 }
