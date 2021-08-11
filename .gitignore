@@ -1,7 +1,6 @@
 # Build
 lib
 dist
-!packages/react-select/dist
 docs/dist
 .env
 

@@ -113,6 +113,7 @@
   "scripts": {
     "build": "preconstruct build",
     "watch": "preconstruct watch",
+    "postinstall": "preconstruct build",
     "coveralls": "cat coverage/lcov.info | coveralls",
     "prettify": "prettier --write .",
     "prettier:check": "prettier --check .",
