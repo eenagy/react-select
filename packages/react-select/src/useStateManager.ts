@@ -7,7 +7,7 @@ import {
   PropsValue,
 } from './types';
 import { PublicBaseSelectProps } from './Select';
-import { useCallback, useState } from 'react';
+import { useCallback, useState, useMemo } from 'react';
 
 type StateManagedPropKeys =
   | 'inputValue'
@@ -61,14 +61,16 @@ export default function useStateManager<
     AdditionalProps,
     keyof StateManagerAdditionalProps<Option> | StateManagedPropKeys
   > {
-  const [stateInputValue, setStateInputValue] = useState(
-    propsInputValue !== undefined ? propsInputValue : defaultInputValue
+  const stateInputValue = useMemo(
+    () => propsInputValue !== undefined ? propsInputValue : defaultInputValue,
+    [propsInputValue, defaultInputValue]
   );
   const [stateMenuIsOpen, setStateMenuIsOpen] = useState(
     propsMenuIsOpen !== undefined ? propsMenuIsOpen : defaultMenuIsOpen
   );
-  const [stateValue, setStateValue] = useState(
-    propsValue !== undefined ? propsValue : defaultValue
+  const stateValue = useMemo(
+    () => propsValue !== undefined ? propsValue : defaultValue,
+    [propsValue, defaultValue]
   );
 
   const onChange = useCallback(
@@ -76,7 +78,6 @@ export default function useStateManager<
       if (typeof propsOnChange === 'function') {
         propsOnChange(value, actionMeta);
       }
-      setStateValue(value);
     },
     [propsOnChange]
   );
@@ -86,7 +87,6 @@ export default function useStateManager<
       if (typeof propsOnInputChange === 'function') {
         newValue = propsOnInputChange(value, actionMeta);
       }
-      setStateInputValue(newValue !== undefined ? newValue : value);
     },
     [propsOnInputChange]
   );
