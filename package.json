@@ -5,9 +5,9 @@
   "description": "A Select control built with and for ReactJS",
   "author": "Jed Watson",
   "license": "MIT",
-  "main": "lib/react-select.cjs.production.js",
-  "module": "lib/react-select.esm.production.js",
-  "types": "lib/react-select.cjs.d.ts",
+  "main": "lib/react-select.cjs.production.min.js",
+  "module": "lib/react-select.esm.js",
+  "types": "lib/types.d.ts",
   "repository": {
     "type": "git",
     "url": "https://github.com/JedWatson/react-select.git"
