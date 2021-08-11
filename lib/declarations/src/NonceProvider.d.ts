@@ -6,7 +6,7 @@ interface NonceProviderProps {
 }
 export default class NonceProvider extends Component<NonceProviderProps> {
     constructor(props: NonceProviderProps);
-    createEmotionCache: (nonce: string, key: string) => import("@emotion/utils").EmotionCache;
+    createEmotionCache: (nonce: string, key: string) => import("@emotion/react").EmotionCache;
     render(): JSX.Element;
 }
 export {};
