@@ -3,7 +3,7 @@ export declare const noop: () => void;
 export declare const emptyString: () => string;
 export declare function classNames(prefix?: string | null, state?: ClassNamesState, className?: string): string;
 export declare const cleanValue: <Option extends OptionBase>(value: PropsValue<Option>) => Options<Option>;
-export declare const cleanCommonProps: <Option extends OptionBase, IsMulti extends boolean, Group extends GroupBase<Option>, AdditionalProps>(props: Partial<CommonPropsAndClassName<Option, IsMulti, Group>> & AdditionalProps) => Omit<AdditionalProps, keyof CommonPropsAndClassName<Option, IsMulti, Group>>;
+export declare const cleanCommonProps: <Option extends OptionBase, IsMulti extends boolean, Group extends GroupBase<Option>, AdditionalProps>(props: Partial<CommonPropsAndClassName<Option, IsMulti, Group>> & AdditionalProps) => Pick<AdditionalProps, Exclude<keyof AdditionalProps, "className" | "clearValue" | "cx" | "getStyles" | "getValue" | "hasValue" | "isMulti" | "isRtl" | "options" | "selectOption" | "selectProps" | "setValue" | "theme">>;
 export declare function handleInputChange(inputValue: string, actionMeta: InputActionMeta, onInputChange?: (newValue: string, actionMeta: InputActionMeta) => string | void): string;
 export declare function isDocumentElement(el: HTMLElement | typeof window): el is typeof window;
 export declare function normalizedHeight(el: HTMLElement | typeof window): number;

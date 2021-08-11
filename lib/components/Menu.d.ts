@@ -64,7 +64,7 @@ export declare class MenuPlacer<Option extends OptionBase, IsMulti extends boole
     getUpdatedProps: () => {
         placement: CoercedMenuPlacement;
         maxHeight: number;
-        children: ((childrenProps: ChildrenProps) => ReactNode) & ReactNode;
+        children: ((childrenProps: ChildrenProps) => ReactNode) | (((childrenProps: ChildrenProps) => ReactNode) & string) | (((childrenProps: ChildrenProps) => ReactNode) & number) | (((childrenProps: ChildrenProps) => ReactNode) & false) | (((childrenProps: ChildrenProps) => ReactNode) & true) | (((childrenProps: ChildrenProps) => ReactNode) & import("react").ReactElement<any, string | ((props: any) => import("react").ReactElement<any, any> | null) | (new (props: any) => Component<any, any, any>)>) | (((childrenProps: ChildrenProps) => ReactNode) & import("react").ReactNodeArray) | (((childrenProps: ChildrenProps) => ReactNode) & import("react").ReactPortal);
         clearValue: () => void;
         cx: import("../types").CX;
         getStyles: import("../types").GetStyles<Option, IsMulti, Group>;

@@ -334,13 +334,61 @@ export default class Select<Option extends OptionBase = OptionBase, IsMulti exte
     constructor(props: Props<Option, IsMulti, Group>);
     static getDerivedStateFromProps(props: Props<OptionBase, boolean, GroupBase<OptionBase>>, state: State<OptionBase, boolean, GroupBase<OptionBase>>): {
         prevProps: Props<OptionBase, boolean, GroupBase<OptionBase>>;
-        ariaSelection: AriaSelection<OptionBase, boolean> | null;
+        ariaSelection: import("./types").InitialInputFocusedActionMeta<OptionBase, boolean> | (import("./types").SelectOptionActionMeta<OptionBase> & {
+            value: PropsValue<OptionBase>;
+            option?: OptionBase | undefined;
+            options?: Options<OptionBase> | undefined;
+        }) | (import("./types").DeselectOptionActionMeta<OptionBase> & {
+            value: PropsValue<OptionBase>;
+            option?: OptionBase | undefined;
+            options?: Options<OptionBase> | undefined;
+        }) | (import("./types").RemoveValueActionMeta<OptionBase> & {
+            value: PropsValue<OptionBase>;
+            option?: OptionBase | undefined;
+            options?: Options<OptionBase> | undefined;
+        }) | (import("./types").PopValueActionMeta<OptionBase> & {
+            value: PropsValue<OptionBase>;
+            option?: OptionBase | undefined;
+            options?: Options<OptionBase> | undefined;
+        }) | (import("./types").ClearActionMeta<OptionBase> & {
+            value: PropsValue<OptionBase>;
+            option?: OptionBase | undefined;
+            options?: Options<OptionBase> | undefined;
+        }) | (import("./types").CreateOptionActionMeta<OptionBase> & {
+            value: PropsValue<OptionBase>;
+            option?: OptionBase | undefined;
+            options?: Options<OptionBase> | undefined;
+        }) | null;
         prevWasFocused: boolean;
         inputIsHidden: boolean;
         inputIsHiddenAfterUpdate: undefined;
     } | {
         prevProps: Props<OptionBase, boolean, GroupBase<OptionBase>>;
-        ariaSelection: AriaSelection<OptionBase, boolean> | null;
+        ariaSelection: import("./types").InitialInputFocusedActionMeta<OptionBase, boolean> | (import("./types").SelectOptionActionMeta<OptionBase> & {
+            value: PropsValue<OptionBase>;
+            option?: OptionBase | undefined;
+            options?: Options<OptionBase> | undefined;
+        }) | (import("./types").DeselectOptionActionMeta<OptionBase> & {
+            value: PropsValue<OptionBase>;
+            option?: OptionBase | undefined;
+            options?: Options<OptionBase> | undefined;
+        }) | (import("./types").RemoveValueActionMeta<OptionBase> & {
+            value: PropsValue<OptionBase>;
+            option?: OptionBase | undefined;
+            options?: Options<OptionBase> | undefined;
+        }) | (import("./types").PopValueActionMeta<OptionBase> & {
+            value: PropsValue<OptionBase>;
+            option?: OptionBase | undefined;
+            options?: Options<OptionBase> | undefined;
+        }) | (import("./types").ClearActionMeta<OptionBase> & {
+            value: PropsValue<OptionBase>;
+            option?: OptionBase | undefined;
+            options?: Options<OptionBase> | undefined;
+        }) | (import("./types").CreateOptionActionMeta<OptionBase> & {
+            value: PropsValue<OptionBase>;
+            option?: OptionBase | undefined;
+            options?: Options<OptionBase> | undefined;
+        }) | null;
         prevWasFocused: boolean;
         inputIsHidden?: undefined;
         inputIsHiddenAfterUpdate?: undefined;
@@ -370,7 +418,7 @@ export default class Select<Option extends OptionBase = OptionBase, IsMulti exte
     getCommonProps(): {
         clearValue: () => void;
         cx: (...args: any) => string;
-        getStyles: <Key extends keyof StylesProps<Option, IsMulti, Group>>(key: Key, props: StylesProps<Option, IsMulti, Group>[Key]) => import("./types").CSSObjectWithLabel;
+        getStyles: <Key extends "menu" | "clearIndicator" | "container" | "control" | "dropdownIndicator" | "group" | "groupHeading" | "indicatorsContainer" | "indicatorSeparator" | "input" | "loadingIndicator" | "loadingMessage" | "menuList" | "menuPortal" | "multiValue" | "multiValueLabel" | "multiValueRemove" | "noOptionsMessage" | "option" | "placeholder" | "singleValue" | "valueContainer">(key: Key, props: StylesProps<Option, IsMulti, Group>[Key]) => import("./types").CSSObjectWithLabel;
         getValue: () => Options<Option>;
         hasValue: boolean;
         isMulti: IsMulti;
@@ -385,7 +433,7 @@ export default class Select<Option extends OptionBase = OptionBase, IsMulti exte
     };
     getOptionLabel: (data: Option) => string;
     getOptionValue: (data: Option) => string;
-    getStyles: <Key extends keyof StylesProps<Option, IsMulti, Group>>(key: Key, props: StylesProps<Option, IsMulti, Group>[Key]) => import("./types").CSSObjectWithLabel;
+    getStyles: <Key extends "menu" | "clearIndicator" | "container" | "control" | "dropdownIndicator" | "group" | "groupHeading" | "indicatorsContainer" | "indicatorSeparator" | "input" | "loadingIndicator" | "loadingMessage" | "menuList" | "menuPortal" | "multiValue" | "multiValueLabel" | "multiValueRemove" | "noOptionsMessage" | "option" | "placeholder" | "singleValue" | "valueContainer">(key: Key, props: StylesProps<Option, IsMulti, Group>[Key]) => import("./types").CSSObjectWithLabel;
     getElementId: (element: 'group' | 'input' | 'listbox' | 'option' | 'placeholder' | 'live-region') => string;
     getComponents: () => {
         ClearIndicator: <Option_1 extends OptionBase, IsMulti_1 extends boolean, Group_1 extends GroupBase<Option_1>>(props: import(".").ClearIndicatorProps<Option_1, IsMulti_1, Group_1>) => import("@emotion/react").jsx.JSX.Element;
